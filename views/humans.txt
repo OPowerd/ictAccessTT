@@ -1,0 +1,12 @@
+/* This site was built by the OPower.d Team for the developing Caribbean Code Sprint in Jan 2012 */
+/* Sheldon Kelly Twitter ID: sheldon_kelly */
+/* Ria Jack */
+/* Irwin Williams */
+/* Oriel Bailey */
+/* Timothy Hinds */
+/* humanstxt.org */
+
+/* SITE */
+  Standards: HTML5, CSS3
+  Components: jQuery, jQueryUI, Node.JS, d3, MapBox, tileStream, DataTables, Modernizr, ModestMaps, Foundation, Underscore
+  Software: no.de, Sublime Text, Git, Visual Studio, NotePad ++, Quantum GIS, LibreOffice, Google Refine

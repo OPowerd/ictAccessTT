@@ -1,0 +1,338 @@
+/* */
+/* */
+/* -------------------------------------------------- 
+   Table of Contents
+-----------------------------------------------------
+:: Shared Styles
+:: @font-face Fonts
+:: Page Name 2
+*/
+/* -----------------------------------------
+   Page Name 1
+----------------------------------------- */
+
+
+@font-face {
+    font-family: 'BebasNeueRegular';
+    src: url('type/bebasneue-webfont.eot');
+    src: url('type/bebasneue-webfont.eot?#iefix') format('embedded-opentype'),
+         url('type/bebasneue-webfont.woff') format('woff'),
+         url('type/bebasneue-webfont.ttf') format('truetype'),
+         url('type/bebasneue-webfont.svg#BebasNeueRegular') format('svg');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+@font-face {
+    font-family: 'LeagueGothicRegular';
+    src: url('type/league_gothic-webfont.eot');
+    src: url('type/league_gothic-webfont.eot?#iefix') format('embedded-opentype'),
+         url('type/league_gothic-webfont.woff') format('woff'),
+         url('type/league_gothic-webfont.ttf') format('truetype'),
+         url('type/league_gothic-webfont.svg#LeagueGothicRegular') format('svg');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+
+@font-face {
+    font-family: 'ChunkFiveRegular';
+    src: url('type/chunkfive-webfont.eot');
+    src: url('type/chunkfive-webfont.eot?#iefix') format('embedded-opentype'),
+         url('type/chunkfive-webfont.woff') format('woff'),
+         url('type/chunkfive-webfont.ttf') format('truetype'),
+         url('type/chunkfive-webfont.svg#ChunkFiveRegular') format('svg');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+@font-face {
+    font-family: 'CabinBold';
+    src: url('type/cabin-bold-ttf-webfont.eot');
+    src: url('type/cabin-bold-ttf-webfont.eot?#iefix') format('embedded-opentype'),
+         url('type/cabin-bold-ttf-webfont.woff') format('woff'),
+         url('type/cabin-bold-ttf-webfont.ttf') format('truetype'),
+         url('type/cabin-bold-ttf-webfont.svg#CabinBold') format('svg');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+@font-face {
+    font-family: 'CabinRegular';
+    src: url('type/cabin-regular-ttf-webfont.eot');
+    src: url('cabin-regular-ttf-webfont.eot?#iefix') format('embedded-opentype'),
+         url('type/cabin-regular-ttf-webfont.woff') format('woff'),
+         url('type/cabin-regular-ttf-webfont.ttf') format('truetype'),
+         url('type/cabin-regular-ttf-webfont.svg#CabinRegular') format('svg');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+@font-face {
+    font-family: 'CandalRegular';
+    src: url('type/candal-webfont.eot');
+    src: url('type/candal-webfont.eot?#iefix') format('embedded-opentype'),
+         url('type/candal-webfont.woff') format('woff'),
+         url('type/candal-webfont.ttf') format('truetype'),
+         url('type/candal-webfont.svg#CandalRegular') format('svg');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+/*
+.row {
+    max-width:100%;
+}
+*/
+/* OPower.d bar */
+#OPowerdBar {
+	background: #222222;
+	border-bottom: 4px #f85f5f solid;
+	padding: 15px 20px 13px 20px;
+}
+@media handheld, only screen and (max-width: 767px) {
+#OPowerdBar {
+	padding-left: 20px;
+	padding-right: 20px;
+}
+}
+#OPowerdBar h1 {
+    margin-bottom: 0;
+	line-height: 1;
+    font-family: Corbel ,'BebasNeueRegular', helvetica, arial;
+}
+#OPowerdBar h2 {
+    margin-bottom: 0;
+	line-height: 1;
+    font-family: Corbel ,'BebasNeueRegular', helvetica, arial;
+}
+#OPowerdBar h1 {
+	color: #d9d0cb;
+	font-size: 16px;
+	font-size: 1.6rem;
+	font-weight: 800;
+}
+#OPowerdBar h1 a {
+	color: #d9d0cb;
+    font-size: 32px;
+    font-family: 'BebasNeueRegular', helvetica, arial;
+}
+
+
+#OPowerdBar h2 a {
+	text-indent: -99999px;
+	display: block;
+	width: 82px;
+	height: 14px;
+    font-family: Corbel, 'BebasNeueRegular', helvetica, arial;
+  /*background: url('../images/by-zurb.png'); */
+}
+#OPowerdBar strong {
+	display: block;
+	margin: 0;
+	padding: 0;
+	height: 14px;
+	line-height: 14px;
+	position: relative;
+	bottom: 4px;
+}
+#OPowerdBar strong a {
+	/*line-height: 14px;*/
+	color: #d9d0cb;
+	/*font-weight: 500;
+	padding-right: 12px;*/
+}
+#OPowerdBar strong a.button {
+	/*padding: 4px 10px;*/
+	font-weight: bold;
+}
+
+
+/*
+Navigation
+
+*/
+
+#oNav-main-div .nav-bar {
+height: 35px;
+background: #dddddd;
+margin-top: 0px;
+border: 1px solid #DDD;
+}
+
+#oNav-main-div .nav-bar > li{
+float: left;
+display: block;
+position: relative;
+padding: 0;
+margin: 0;
+border-right: 1px solid #DDD;
+line-height: 35px;
+font-weight: normal;
+padding: 5px;
+}
+
+
+#oNav-main-div .nav-bar > li > a.main{
+font-weight: normal;
+color:#1c1c1c;
+padding: 5px;
+}
+/* -----------------------------------------
+   Main
+----------------------------------------- */
+
+#Omain {
+	padding: 0px;
+	padding-right: 0px;
+	min-height: 100%;
+	height: auto !important;
+	height: 100%;
+	margin: 0;
+}
+/*big time hack here! ... review */
+#Omain .row {
+	margin: 0;
+}
+.push {
+	padding: 0px;
+	padding-right: 0px;
+	min-height: 100%;
+	height: auto !important;
+	height: 100%;
+	margin: 0 auto -4em;
+}
+
+@media handheld, only screen and (max-width: 767px) {
+#Omain {
+	padding-left: 0;
+	padding-right: 0;
+}
+}
+#Omain h1, #Omain h2 {
+	margin-bottom: 0;
+	line-height: 1;
+}
+#Omain h1 {
+	color: white;
+	font-size: 16px;
+	font-size: 1.6rem;
+	font-weight: 800;
+}
+#Omain h1 a {
+	color: #fff;
+	font-weight: bold;
+}
+#Omain h2 a {
+	text-indent: -99999px;
+	display: block;
+	width: 82px;
+	height: 14px;
+  /*background: url('../images/by-zurb.png'); */
+}
+/*
+Map
+
+*/
+#OPmap {
+    margin: 0;
+    padding: 0;
+    border-bottom: 1px silver solid;
+	background-color: silver;
+    width:100%;
+}
+/* CSS magic - overriding inline syle generated by map script ... not working*/
+#map-div [style] {
+    cursor: default !important;
+}
+
+#map-div {
+    border-bottom: 1px silver solid;
+}
+/* 
+    Buttons for map and table
+ */
+
+#OPbuttons li
+{ 
+    display:inline-block;
+    padding: 2px 2px;
+    height: 1px;
+}
+#OPbuttons .small.button
+{ 
+    padding: 8px 12px 10px;
+}
+/* 
+#OPbuttons li a:hover {
+background-color: #EEE;
+}
+*/
+#OPbuttons li.no-block {
+    background: #00A6FC;
+    opacity: 0.25;
+}
+
+/* -----------------------------------------
+   OPower.d footer bar
+----------------------------------------- */
+#OPfooterBar {
+	background: #222222;
+	border-top: solid 4px #f85f5f;
+	padding: 15px 20px 13px 20px;
+}
+@media handheld, only screen and (max-width: 767px) {
+#OPfooterBar {
+	padding-left: 20px;
+	padding-right: 20px;
+}
+}
+#OPfooterBar h5, #OPfooterBar h6 {
+	margin-top: 0;
+	line-height: 1;
+}
+#OPfooterBar h6 {
+	color: white;
+	font-size: 10px;
+	font-size: 1.0rem;
+	font-weight: 800;
+}
+#OPfooterBar h5 a {
+	color: #fff;
+	font-weight: bold;
+}
+#OPfooterBar h6 a {
+	text-indent: -99999px;
+	display: block;
+	width: 82px;
+	height: 14px;
+  /*background: url('../images/by-zurb.png'); */
+}
+#OPfooterBar strong {
+	display: block;
+	margin: 0;
+	padding: 0;
+	height: 14px;
+	line-height: 14px;
+	position: relative;
+	bottom: 4px;
+}
+#OPfooterBar strong a {
+	line-height: 14px;
+	color: #fff;
+	font-weight: 500;
+	padding-right: 12px;
+}
+#OPfooterBar {
+	clear: both;
+	position: relative;
+	z-index: 10;
+	height: 4em;
+	margin-top: -3em;
+}
