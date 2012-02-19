@@ -13,7 +13,7 @@ How the ICT Coverage in Trinidad and Tobago
 * Show the map with various ICT criteria 
 
 ## Install on dev machine
-* git clone https://github.com/mape/node-express-boilerplate myproject
+* git clone https://github.com/OPowerd/ictAccessTT
 * cd myproject
 * npm install
 * vi siteConfig.js # update config for your use case
@@ -27,7 +27,7 @@ How the ICT Coverage in Trinidad and Tobago
 	* svcadm enable redis
 
 * Then on local machine
-	* git clone [https://github.com/mape/node-express-boilerplate](https://github.com/mape/node-express-boilerplate) myproject
+	* git clone [https://github.com/OPowerd/ictAccessTT](https://github.com/OPowerd/ictAccessTT) myproject
 	* cd myproject
 	* cp siteConfig.sample.js siteConfig.js
 	* edit siteConfig.js settings
