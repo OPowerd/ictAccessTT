@@ -1,10 +1,10 @@
 {
-  "name" : "node-express-boilerplate",
-  "description" : "A boilerplate used to quickly get projects going.",
-  "version" : "0.0.2",
-  "author" : "Mathias Pettersson <mape@mape.me>",
+  "name" : "ictAccessTT",
+  "description" : "A Trinidad and Tobago ICT Access Project.",
+  "version" : "0.0.1",
+  "author" : "OPower.d <skyami@live.com>",
   "engines" : ["node"],
-  "repository" : { "type":"git", "url":"http://github.com/mape/node-express-boilerplate" },
+  "repository" : { "type":"git", "url":"https://github.com/OPowerd/ictAccessTT" },
   "dependencies" : {
     "connect" : ">=1.6.0",
     "connect-assetmanager" : ">=0.0.21",
