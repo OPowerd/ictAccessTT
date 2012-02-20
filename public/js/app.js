@@ -309,17 +309,67 @@ function refreshMap() {
    Using JQuery UI for dragging and dropping viz. for user interaction with Blocks and Buckets
 */
 $(function() {
-    $("ul.droptrue").sortable({
-        connectWith: "ul"
-    });
-
-    $("ul.dropfalse").sortable({
+    $("#bucket0").sortable({
         connectWith: "ul",
-        dropOnEmpty: false
+        placeholder: "ui-state-highlight",
+        containment: "#containment-wrapper",
+        hoverClass: "ui-state-hover",
+        accept: ":not(#bucket-head0)",
+        items: ':not(.ui-widget-header)'
+    });    
+    $("#bucket-head0").sortable({
+        connectWith: "ul",
+        placeholder: "ui-state-highlight",
+        containment: "#containment-wrapper",
+        hoverClass: "ui-state-hover",
+        accept: ":not(.ui-widget-header)",
+        items: ':not(.ui-widget-header)'
     });
-
-    $("#bucket1, #bucket2, #bucket3").disableSelection();
+    $("#bucket1").sortable({
+        connectWith: "ul",
+        placeholder: "ui-state-highlight",
+        containment: "#containment-wrapper",
+        hoverClass: "ui-state-hover",
+        accept: ":not(.ui-widget-header)",
+        items: ':not(.ui-widget-header)'
+    });
+    $("#bucket2").sortable({
+        connectWith: "ul",
+        placeholder: "ui-state-highlight",
+        containment: "#containment-wrapper",
+        hoverClass: "ui-state-hover",
+        accept: ":not(.ui-sortable-helper)",
+        items: ':not(.ui-widget-header)'
+    });
+    $( "#bucket3" ).sortable({ 
+        connectWith: "ul",
+        placeholder: "ui-state-highlight",
+        containment: "#containment-wrapper",
+        hoverClass: "ui-state-hover",
+        accept: ":not(.ui-sortable-helper)",
+        items: ':not(.ui-widget-header)'
+        });
+    $( "#bucket4" ).sortable({ 
+        connectWith: "ul",
+        placeholder: "ui-state-highlight",
+        containment: "#containment-wrapper",
+        hoverClass: "ui-state-hover",
+        accept: ":not(.ui-sortable-helper)",
+        items: ':not(.ui-widget-header)'
+        });
+    $( "#bucket5" ).sortable({ 
+        connectWith: "ul",
+        placeholder: "ui-state-highlight",
+        containment: "#containment-wrapper",
+        hoverClass: "ui-state-hover",
+        accept: ":not(.ui-sortable-helper)",
+        items: ':not(.ui-widget-header)'
+        });
+    $("bucket0, #bucket1, #bucket2, #bucket3, #bucket4, #bucket5").disableSelection();
 });
+
+
+
 /* 
    Using D3 Chart http://mbostock.github.com/d3/ 
    D3.js is a JavaScript library for manipulating documents based on data.

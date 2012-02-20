@@ -79,12 +79,7 @@ app.configure('development', function() {
 var assetsMiddleware = assetManager(assetsSettings);
 
 // Settings
-/*
-app.configure(function() {
-	app.set('view engine', 'ejs');
-	app.set('views', __dirname + '/views');
-});
-*/
+
 app.configure(function() {
     app.set('view engine', 'ejs');
     app.set('views', __dirname + '/views');
@@ -203,7 +198,7 @@ app.all('/', function(req, res) {
 	res.locals({
 		'key': 'value'
 	});
-	res.render('index.html');
+	res.render('index.html','buckets.html');
 });
 
 // Initiate this after all other routing is done, otherwise wildcard will go crazy.

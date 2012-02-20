@@ -317,7 +317,7 @@ background-color: #EEE;
 /* -----------------------------------------
    User interaction (drgging and Dropping for Buckets and Blocks
 ----------------------------------------- */
-#sortable1, #sortable2, #sortable3 {
+#bucket0, #bucket1, #bucket2, #bucket3, #bucket4, #bucket5 {
     list - style - type: none;
     margin: 0;
     padding: 0;
@@ -325,12 +325,13 @@ background-color: #EEE;
     margin - right: 10px;
     background: #eee;
     padding: 5px;
-    width: 143px;
-}#sortable1 li, #sortable2 li, #sortable3 li {
+}#bucket0 li, #bucket1 li, #bucket2 li, #bucket3 li, #bucket4 li, #bucket5 li {
     margin: 5px;
     padding: 5px;
-    font - size: 1.2em;
-    width: 120px;
+}
+#containment-wrapper {
+    border: 2px solid#ccc;
+    padding: 10px;
 }
 /* -----------------------------------------
    OPower.d footer bar
