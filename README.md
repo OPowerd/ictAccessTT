@@ -12,6 +12,7 @@ ICT Coverage in Trinidad and Tobago
 
 * Show the map with various ICT criteria 
 
+# How do I install ictAccessTT? #
 ## Install on dev machine
 
 ```bash
@@ -23,7 +24,6 @@ $ git clone https://github.com/OPowerd/ictAccessTT.git
 * node server.js
 
 ## Install on no.de
-# How do I install ictAccessTT? #
 
  * First on node machine
     * ssh node@yourname.no.de

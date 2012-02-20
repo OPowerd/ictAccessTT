@@ -308,8 +308,18 @@ function refreshMap() {
 /* 
    Using JQuery UI for dragging and dropping viz. for user interaction with Blocks and Buckets
 */
+$(function() {
+    $("ul.droptrue").sortable({
+        connectWith: "ul"
+    });
 
+    $("ul.dropfalse").sortable({
+        connectWith: "ul",
+        dropOnEmpty: false
+    });
 
+    $("#bucket1, #bucket2, #bucket3").disableSelection();
+});
 /* 
    Using D3 Chart http://mbostock.github.com/d3/ 
    D3.js is a JavaScript library for manipulating documents based on data.
