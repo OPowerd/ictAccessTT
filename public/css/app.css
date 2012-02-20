@@ -141,6 +141,7 @@
 	line-height: 14px;
 	position: relative;
 	bottom: 4px;
+    width:100%;
 }
 #OPowerdBar strong a {
 	/*line-height: 14px;*/
@@ -152,7 +153,9 @@
 	/*padding: 4px 10px;*/
 	font-weight: bold;
 }
-
+#OPowerdBar .row {
+    max-width:1860px;
+}
 
 /*
 Navigation
@@ -164,26 +167,38 @@ height: 35px;
 background: #dddddd;
 margin-top: 0px;
 border: 1px solid #DDD;
+-moz-border-radius: 4px;
+    -webkit-border-radius: 4px;
+    border-radius: 4px;
 }
-
+#oNav-main-div .nav-bar > strong{
+width:100%;
+}
 #oNav-main-div .nav-bar > li{
 float: left;
 display: block;
 position: relative;
 padding: 0;
 margin: 0;
-border-right: 1px solid #DDD;
+border-right: 1px solid #c7c7c7;
 line-height: 35px;
 font-weight: normal;
 padding: 5px;
+width:30%;
+line-height:100%;
+padding: 12px 0 0 0;
 }
 
 
 #oNav-main-div .nav-bar > li > a.main{
 font-weight: normal;
 color:#1c1c1c;
-padding: 5px;
 }
+#oNav-main-div .nav-bar > li.has-flyout > a.flyout-toggle {
+padding: 22px 2px;
+line-height:100%;
+}
+
 /* -----------------------------------------
    Main
 ----------------------------------------- */
@@ -268,6 +283,27 @@ Map
 #OPbuttons .small.button
 { 
     padding: 8px 12px 10px;
+    /*background-color: #4D90FE;
+    background-image: -webkit-gradient(linear,left top,left bottom,from(#4D90FE),to(#4787ED));
+    background-image: -webkit-linear-gradient(top,#4D90FE,#4787ED);
+    background-image: -moz-linear-gradient(top,#4D90FE,#4787ED);
+    background-image: -ms-linear-gradient(top,#4D90FE,#4787ED);
+    background-image: -o-linear-gradient(top,#4D90FE,#4787ED);
+    background-image: linear-gradient(top,#4D90FE,#4787ED);
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorStr='#4d90fe',EndColorStr='#4787ed');
+    border: 1px solid #3079ED;
+    -moz-border-radius: 2px;
+    -webkit-border-radius: 2px;
+    border-radius: 2px;
+    -moz-user-select: none;
+    -webkit-user-select: none;
+    color: white;
+    cursor: default;
+    font-size: 11px;
+    font-weight: bold;
+    height: 29px;*/
+    min-width: 24px;
+    text-align: center;
 }
 /* 
 #OPbuttons li a:hover {
@@ -278,7 +314,24 @@ background-color: #EEE;
     background: #00A6FC;
     opacity: 0.25;
 }
-
+/* -----------------------------------------
+   User interaction (drgging and Dropping for Buckets and Blocks
+----------------------------------------- */
+#sortable1, #sortable2, #sortable3 {
+    list - style - type: none;
+    margin: 0;
+    padding: 0;
+    float: left;
+    margin - right: 10px;
+    background: #eee;
+    padding: 5px;
+    width: 143px;
+}#sortable1 li, #sortable2 li, #sortable3 li {
+    margin: 5px;
+    padding: 5px;
+    font - size: 1.2em;
+    width: 120px;
+}
 /* -----------------------------------------
    OPower.d footer bar
 ----------------------------------------- */

@@ -305,8 +305,15 @@ function refreshMap() {
   });
 }
 
+/* 
+   Using JQuery UI for dragging and dropping viz. for user interaction with Blocks and Buckets
+*/
 
 
+/* 
+   Using D3 Chart http://mbostock.github.com/d3/ 
+   D3.js is a JavaScript library for manipulating documents based on data.
+*/
 
 function d3Chart(){
 var w = 480,
