@@ -315,17 +315,17 @@ background-color: #EEE;
     opacity: 0.25;
 }
 /* -----------------------------------------
-   User interaction (drgging and Dropping for Buckets and Blocks
+   User interaction (drgging and Dropping for baskets and Blocks
 ----------------------------------------- */
-#bucket0, #bucket1, #bucket2, #bucket3, #bucket4, #bucket5 {
-    list - style - type: none;
+#basket0, #basket1, #basket2, #basket3, #basket4, #basket5 {
+    list-style-type: none;
     margin: 0;
     padding: 0;
     float: left;
-    margin - right: 10px;
+    margin-right: 10px;
     background: #eee;
     padding: 5px;
-}#bucket0 li, #bucket1 li, #bucket2 li, #bucket3 li, #bucket4 li, #bucket5 li {
+}#basket0 li, #basket1 li, #basket2 li, #basket3 li, #basket4 li, #basket5 li {
     margin: 5px;
     padding: 5px;
 }

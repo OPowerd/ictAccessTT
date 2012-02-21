@@ -306,18 +306,18 @@ function refreshMap() {
 }
 
 /* 
-   Using JQuery UI for dragging and dropping viz. for user interaction with Blocks and Buckets
+   Using JQuery UI for dragging and dropping viz. for user interaction with Blocks and baskets
 */
 $(function() {
-    $("#bucket0").sortable({
+    $("#basket0").sortable({
         connectWith: "ul",
         placeholder: "ui-state-highlight",
         containment: "#containment-wrapper",
         hoverClass: "ui-state-hover",
-        accept: ":not(#bucket-head0)",
+        accept: ":not(#basket-head0)",
         items: ':not(.ui-widget-header)'
     });    
-    $("#bucket-head0").sortable({
+    $("#basket-head0").sortable({
         connectWith: "ul",
         placeholder: "ui-state-highlight",
         containment: "#containment-wrapper",
@@ -325,7 +325,7 @@ $(function() {
         accept: ":not(.ui-widget-header)",
         items: ':not(.ui-widget-header)'
     });
-    $("#bucket1").sortable({
+    $("#basket1").sortable({
         connectWith: "ul",
         placeholder: "ui-state-highlight",
         containment: "#containment-wrapper",
@@ -333,7 +333,7 @@ $(function() {
         accept: ":not(.ui-widget-header)",
         items: ':not(.ui-widget-header)'
     });
-    $("#bucket2").sortable({
+    $("#basket2").sortable({
         connectWith: "ul",
         placeholder: "ui-state-highlight",
         containment: "#containment-wrapper",
@@ -341,7 +341,7 @@ $(function() {
         accept: ":not(.ui-sortable-helper)",
         items: ':not(.ui-widget-header)'
     });
-    $( "#bucket3" ).sortable({ 
+    $( "#basket3" ).sortable({ 
         connectWith: "ul",
         placeholder: "ui-state-highlight",
         containment: "#containment-wrapper",
@@ -349,7 +349,7 @@ $(function() {
         accept: ":not(.ui-sortable-helper)",
         items: ':not(.ui-widget-header)'
         });
-    $( "#bucket4" ).sortable({ 
+    $( "#basket4" ).sortable({ 
         connectWith: "ul",
         placeholder: "ui-state-highlight",
         containment: "#containment-wrapper",
@@ -357,7 +357,7 @@ $(function() {
         accept: ":not(.ui-sortable-helper)",
         items: ':not(.ui-widget-header)'
         });
-    $( "#bucket5" ).sortable({ 
+    $( "#basket5" ).sortable({ 
         connectWith: "ul",
         placeholder: "ui-state-highlight",
         containment: "#containment-wrapper",
@@ -365,7 +365,7 @@ $(function() {
         accept: ":not(.ui-sortable-helper)",
         items: ':not(.ui-widget-header)'
         });
-    $("bucket0, #bucket1, #bucket2, #bucket3, #bucket4, #bucket5").disableSelection();
+    $("basket0, #basket1, #basket2, #basket3, #basket4, #basket5").disableSelection();
 });
 
 
