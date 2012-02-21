@@ -1,7 +1,7 @@
 /* Setting up block data */
 var urlDAI = "http://opmilld.no.de/v2/tt-digital_access_index";
 //var urlBlocks = "http://opmilld.no.de/v2/tt-ict-served-blocks";
-var urlBlocks = "http://opmilld.no.de/v2/tt-rcorp-boundaries";
+var urlBlocks = "http://opmilld.no.de/v2/tt-ict-underserved-communities";
 var blocks =
 [
   { 'block': 'block 1', 'noData': true },
