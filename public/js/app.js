@@ -1,7 +1,8 @@
 /* Setting up block data */
 var urlDAI = "http://opmilld.no.de/v2/tt-digital_access_index";
-//var urlBlocks = "http://opmilld.no.de/v2/tt-ict-served-blocks";
-var urlBlocks = "http://opmilld.no.de/v2/tt-ict-underserved-communities";
+var urlCommunities = "http://opmilld.no.de/v2/tt-ict-underserved-communities";
+var urlBlocks = "http://opmilld.no.de/v2/tt-underserved-comm-blocks";
+var urlBaskets = "http://opmilld.no.de/v2/tt-underserved-comm-blocks";
 var blocks =
 [
   { 'block': 'block 1', 'noData': true },
@@ -23,14 +24,21 @@ var blocks =
 */
 $(document).ready(function () {
     
-    $("#dai-idx").click(function (e) {
+    $("#ict-dai").click(function (e) {
         e.preventDefault(); 
         callMap(urlDAI);
     });
-
-    $("#dai-util").click(function (e) {
+    $("#ict-ucomm").click(function (e) {
+        e.preventDefault(); 
+        callMap(urlCommunities);
+    });
+    $("#ict-ublks").click(function (e) {
         e.preventDefault(); 
         callMap(urlBlocks);
+    });
+    $("#ict-ubskts").click(function (e) {
+        e.preventDefault(); 
+        callMap(urlBaskets);
     });
 
 	/* Use this js doc for all application specific JS */
@@ -152,36 +160,60 @@ $(document).ready(function () {
 
 
 function callMap(source) {
+    /*
+        $('#map-div').remove();
+        $('<div id="map-div" class="six columns">'+
+        '</div>').prependTo('#OPbuttons');
+        */
 	var tilejson = {
 		tilejson: '1.0.0',
 		scheme: 'xyz',
 		tiles: [source + '/{z}/{x}/{y}.png']
 	};
-
+ 
 	var url = source + '.json';
 	// Alias com.modestmaps to mm. This isn't necessary -
 	// just nice for shorter code.
 	var mm = com.modestmaps;
     var wxm =wax.mm;
+    
 	wax.tilejson(url, function(tilejson) {
-        $('#map-div').html(" ");
         $('.wax-legends').remove();
 		// Set up a map in a div with the id 'map-div'
 		var m = new mm.Map('map-div',
 		// Use Wax's connector to add a new custom layer
-		new wax.mm.connector(tilejson),
-		// And it'll be 240px by 120px
+		new wxm.connector(tilejson),
+		// And Remember to autosize this so  that the map will automatically 
+        // resize . CSS relative sizes
 		new mm.Point(1800, 500));
+                
 		wxm.fullscreen(m, tilejson).appendTo(m.parent);
 		wxm.zoomer(m, tilejson).appendTo(m.parent);
-		wxm.interaction(m, tilejson);
+        wxm.interaction(m, tilejson).remove;
+		//wxm.interaction(m, tilejson);
+        
         
 		wxm.legend(m, tilejson).appendTo(m.parent);
         //m.setSize(1800, 500);
         //m.autoSize(true);
 		//m.setCenterZoom(new mm.Location(10.641743690271975, -61.27819824218748), 10);
     	m.setCenterZoom(new mm.Location(tilejson.center[1], tilejson.center[0]), 10);
+        var locations = [
+            new m.Location(-62.5466,9.9526),
+            new m.Location(-59.8687,11.1542)
+            ];
+            wxm.setExtent(locations);
+            var hash = wxm.hash(m)
 	});
+    
+/*  Refreshing the map
+When a change is made to our map variables, we need to refresh it 
+for it to display on the page. */
+
+function refreshMap() {
+    wxm.interaction.remove();
+    interaction = wxm.interaction(m, tilejson).remove;
+}
 }
 
 
@@ -291,18 +323,6 @@ function addMapButtons_Blocks() {
 		e.preventDefault();
 		filterTable(e.delegateTarget.id);
 	});
-}
-/*  Refreshing the map
-When a change is made to our map variables, we need to refresh it 
-for it to display on the page. */
-
-function refreshMap() {
-  url = urlBase + layer + '.jsonp';
-  wax.tilejson(url, function(tilejson) {
-    m.setProvider(new wax.mm.connector(tilejson));
-    interaction.remove();
-    interaction = wax.mm.interaction(m, tilejson);
-  });
 }
 
 /* 
