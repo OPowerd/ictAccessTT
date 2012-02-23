@@ -19,6 +19,8 @@ var blocks =
   { 'block': 'block 12' }
     ];
 
+var mInteraction, mLegend;
+
 /* Using Foundation v2.1.5 http://foundation.zurb.com 
    A powerful and flexible framework for Grids, Buttons, Forms, LayoutUI, etc.
 */
@@ -179,6 +181,9 @@ function callMap(source) {
     
 	wax.tilejson(url, function(tilejson) {
         $('.wax-legends').remove();
+        $('.wax-tooltip').remove();
+        if (mInteraction) mInteraction.remove();
+        if (mInteraction) mInteraction.remove();
 		// Set up a map in a div with the id 'map-div'
 		var m = new mm.Map('map-div',
 		// Use Wax's connector to add a new custom layer
@@ -189,7 +194,7 @@ function callMap(source) {
                 
 		wxm.fullscreen(m, tilejson).appendTo(m.parent);
 		wxm.zoomer(m, tilejson).appendTo(m.parent);
-        wxm.interaction(m, tilejson).remove;
+        mInteraction = wxm.interaction(m, tilejson);
 		//wxm.interaction(m, tilejson);
         
         
