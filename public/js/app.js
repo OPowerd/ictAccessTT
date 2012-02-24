@@ -1,9 +1,18 @@
 /* Setting up block data */
-var urlDAI = "http://opmilld.no.de/v2/tt-digital_access_index";
-var urlCommunities = "http://opmilld.no.de/v2/tt-ict-underserved-communities";
-var urlBlocks = "http://opmilld.no.de/v2/tt-underserved-comm-blocks";
-var urlBaskets = "http://opmilld.no.de/v2/tt-underserved-comm-blocks";
-var blocks =
+var ictLayer, map, interaction;
+var ictLayers = ["http://opmilld.no.de/v2/tt-digital_access_index",
+    "http://opmilld.no.de/v2/tt-ict-underserved-communities",
+    "http://opmilld.no.de/v2/tt-underserved-comm-blocks",
+    "http://opmilld.no.de/v2/tt-underserved-comm-blocks"];
+    
+    /*
+    ictLayers urlDAI = "http://opmilld.no.de/v2/tt-digital_access_index",
+    urlCommunities = "http://opmilld.no.de/v2/tt-ict-underserved-communities",
+    urlBlocks = "http://opmilld.no.de/v2/tt-underserved-comm-blocks",
+    urlBaskets = "http://opmilld.no.de/v2/tt-underserved-comm-blocks";
+    */
+    
+    blocks =
 [
   { 'block': 'block 1', 'noData': true },
   { 'block': 'block 2' },
@@ -28,19 +37,19 @@ $(document).ready(function () {
     
     $("#ict-dai").click(function (e) {
         e.preventDefault(); 
-        callMap(urlDAI);
+        callMapM(ictLayers[0],0);
     });
     $("#ict-ucomm").click(function (e) {
         e.preventDefault(); 
-        callMap(urlCommunities);
+        callMapM(ictLayers[1],0);
     });
     $("#ict-ublks").click(function (e) {
         e.preventDefault(); 
-        callMap(urlBlocks);
+        callMapM(ictLayers[2],0);
     });
     $("#ict-ubskts").click(function (e) {
         e.preventDefault(); 
-        callMap(urlBaskets);
+        callMapM(ictLayers[3],0);
     });
 
 	/* Use this js doc for all application specific JS */
@@ -135,7 +144,7 @@ $(document).ready(function () {
   buildTable('data_sources/blocks2.json');
 
   /* Map */
-  callMap(urlDAI);
+  callMapM(ictLayers[0],1);
   addMapButtons_Blocks();
   /*addMapButtons('mapButtons-div','http://opmilld.no.de/v2/tt-digital_access_index',
    'http://opmilld.no.de/v2/tt-digital_access_index',
@@ -161,64 +170,108 @@ $(document).ready(function () {
   });
 
 
-function callMap(source) {
+
+function callMapM(source,ini) {
     /*
-        $('#map-div').remove();
-        $('<div id="map-div" class="six columns">'+
-        '</div>').prependTo('#OPbuttons');
+        Using ModestMaps
         */
-	var tilejson = {
+    var tilejson = {
+        tilejson: '1.0.0',
+        scheme: 'xyz',
+        tiles: [source + '/{z}/{x}/{y}.png']
+    };
+ 
+    var url = source + '.json';
+    var mm = com.modestmaps;
+    var wxm = wax.mm;
+    var locations;
+
+    
+    wax.tilejson(url, function(tilejson) {
+        
+    ictLayer = new wxm.connector(tilejson);
+        
+        if (ini !== 1){
+            $('.wax-legends').remove();
+            $('.wax-tooltip').remove();
+            interaction.remove();
+            //map.removeLayerAt(0);
+            map = new mm.Map('map-div', ictLayer).
+            setCenterZoom(new mm.Location(10.641743690271975, -61.27819824218748), 10);
+            interaction = wxm.interaction(map, tilejson);
+            wxm.fullscreen(map, tilejson).appendTo(map.parent);
+            wxm.zoomer(map, tilejson).appendTo(map.parent);
+            wxm.legend(map, tilejson).appendTo(map.parent);
+            /*
+            locations = [
+              new mm.Location(-62.5466,9.9526),
+              new mm.Location(-59.8687,11.1542)
+            ];
+            map.setExtent(locations);
+            */
+        }
+        else{ 
+            // Set up a map in a div with the id 'map-div'
+            map = new mm.Map('map-div', ictLayer).
+            setCenterZoom(new mm.Location(10.641743690271975, -61.27819824218748), 10);
+            interaction = wxm.interaction(map, tilejson);
+            wxm.fullscreen(map, tilejson).appendTo(map.parent);
+            wxm.zoomer(map, tilejson).appendTo(map.parent);
+            wxm.legend(map, tilejson).appendTo(map.parent);
+            /*
+            locations = [
+              new mm.Location(-62.5466,9.9526),
+              new mm.Location(-59.8687,11.1542)
+            ];
+            map.setExtent(locations);
+            */
+        }
+    });
+}
+
+
+function callMapL(source,ini) {
+    /*
+        Using Leaflet
+        */
+    var tilejson = {
 		tilejson: '1.0.0',
 		scheme: 'xyz',
 		tiles: [source + '/{z}/{x}/{y}.png']
 	};
  
 	var url = source + '.json';
-	// Alias com.modestmaps to mm. This isn't necessary -
-	// just nice for shorter code.
-	var mm = com.modestmaps;
-    var wxm =wax.mm;
+    
     
 	wax.tilejson(url, function(tilejson) {
-        $('.wax-legends').remove();
-        $('.wax-tooltip').remove();
-        if (mInteraction) mInteraction.remove();
-        if (mInteraction) mInteraction.remove();
-		// Set up a map in a div with the id 'map-div'
-		var m = new mm.Map('map-div',
-		// Use Wax's connector to add a new custom layer
-		new wxm.connector(tilejson),
-		// And Remember to autosize this so  that the map will automatically 
-        // resize . CSS relative sizes
-		new mm.Point(1800, 500));
-                
-		wxm.fullscreen(m, tilejson).appendTo(m.parent);
-		wxm.zoomer(m, tilejson).appendTo(m.parent);
-        mInteraction = wxm.interaction(m, tilejson);
-		//wxm.interaction(m, tilejson);
+        
+        var southWest = new L.LatLng(-62.5466,9.9526),
+        northEast = new L.LatLng(-59.8687,11.1542),
+        bounds = new L.LatLngBounds(southWest, northEast);
         
         
-		wxm.legend(m, tilejson).appendTo(m.parent);
-        //m.setSize(1800, 500);
-        //m.autoSize(true);
-		//m.setCenterZoom(new mm.Location(10.641743690271975, -61.27819824218748), 10);
-    	m.setCenterZoom(new mm.Location(tilejson.center[1], tilejson.center[0]), 10);
-        var locations = [
-            new m.Location(-62.5466,9.9526),
-            new m.Location(-59.8687,11.1542)
-            ];
-            wxm.setExtent(locations);
-            var hash = wxm.hash(m)
+        ictLayer = new wax.leaf.connector(tilejson);
+        
+        if (ini !== 1){
+            interaction.remove();
+            map.removeLayer(ictLayer );
+            map.addLayer(ictLayer).
+            setView(new L.LatLng(10.641743690271975, -61.27819824218748), 10);
+            interaction = wax.leaf.interaction(map, tilejson);
+            //wax.leaf.legend(map, tilejson).appendTo(map.parent); 
+            wax.mm.legend(map, tilejson).appendTo(map);
+        }
+        else{ 
+            // Set up a map in a div with the id 'map-div'
+            map = new L.Map('map-div', {minZoom: 8}).
+            addLayer(ictLayer).
+            setView(new L.LatLng(10.641743690271975, -61.27819824218748), 10);
+            $('.leaflet-control-attribution').remove();
+            interaction = wax.leaf.interaction(map, tilejson);
+            //wax.leaf.legend(map, tilejson).appendTo(map.parent);
+            wax.mm.legend(map, tilejson).appendTo(map);
+        }
 	});
-    
-/*  Refreshing the map
-When a change is made to our map variables, we need to refresh it 
-for it to display on the page. */
-
-function refreshMap() {
-    wxm.interaction.remove();
-    interaction = wxm.interaction(m, tilejson).remove;
-}
 }
 
 
