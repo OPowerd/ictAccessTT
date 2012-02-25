@@ -97,7 +97,7 @@ a.wax-fullscreen {
 
 
 
-.title {
+.title[style] {
   font:normal 13px/20px Arial,sans-serif;
   font-size: 120%;
   line-height: 14px;
@@ -113,12 +113,17 @@ a.wax-fullscreen {
   border:1px solid #ccc;
   background:transparent url(images/mask.png) repeat;
   overflow:auto;
+  line-height: 8px;
   border-radius:3px;
   -moz-border-radius:3px;
   -webkit-border-radius:3px;
   box-shadow:rgba(0,0,0,0.1) 0px 1px 3px;
   -moz-box-shadow:rgba(0,0,0,0.1) 0px 1px 3px;
   -webkit-box-shadow:rgba(0,0,0,0.1) 0px 1px 3px;
+  }
+  .wax-legend,
+  .wax-tooltip p{
+  line-height: 8px;
   }
 .wax-movetip {
   position:absolute;

@@ -198,7 +198,34 @@ app.all('/', function(req, res) {
 	res.locals({
 		'key': 'value'
 	});
-	res.render('index.html','buckets.html');
+	res.render('index.html');
+    //res.render('baskets.html');
+});
+
+
+    
+app.all('/', function(req, res){
+        res.render('baskets.html', { locals: {
+            title: 'Baskets',
+            articles:docs
+            }
+        });
+});
+app.get('/baskets', function(req, res){
+  res.render('baskets.html', {
+    title: 'Baskets'
+  });
+});
+app.get('/views', function(req, res){
+  res.render('baskets.html', {
+    title: 'Baskets'
+  });
+});
+
+app.get('/contact', function(req, res){
+  res.render('contact', {
+    title: 'Contact'
+  });
 });
 
 // Initiate this after all other routing is done, otherwise wildcard will go crazy.

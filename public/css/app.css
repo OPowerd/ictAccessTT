@@ -341,11 +341,6 @@ background-color: #EEE;
 /* -----------------------------------------
    OPower.d footer bar
 ----------------------------------------- */
-#OPfooterBar {
-	background: #222222;
-	border-top: solid 4px #f85f5f;
-	padding: 15px 20px 13px 20px;
-}
 @media handheld, only screen and (max-width: 767px) {
 #OPfooterBar {
 	padding-left: 20px;
@@ -388,6 +383,18 @@ background-color: #EEE;
 	font-weight: 500;
 	padding-right: 12px;
 }
+
+#OPfooterBar {
+   position:fixed;
+   left:0px;
+   bottom:0px;
+   height:32px;
+   width:100%;
+   background:#222222;
+   border-top: solid 4px #f85f5f;
+   padding: 15px 20px 13px 20px;
+}
+
 #OPfooterBar {
 	clear: both;
 	position: relative;

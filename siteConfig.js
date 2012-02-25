@@ -1,12 +1,11 @@
 var settings = {
 	'sessionSecret': 'sessionSecret',
 	'port': 10001,
-	//'uri': 'http://190.213.84.249:10001' // Without trailing /
+	'uri': 'http://190.213.84.249:10001' // Without trailing /
     //'uri': 'http://ictaccesstt.herokuapp.com'
-    'uri': 'http://opit-tt.no.de'
+    //'uri': 'http://opit-tt.no.de'
 	// You can add multiple recipiants for notifo notifications
-	,
-	'notifoAuth': null
+	,'notifoAuth': null
 /*[
 		{
 			'username': ''

@@ -5,13 +5,6 @@ var ictLayers = ["http://opmilld.no.de/v2/tt-digital_access_index",
     "http://opmilld.no.de/v2/tt-underserved-comm-blocks",
     "http://opmilld.no.de/v2/tt-underserved-comm-blocks"];
     
-    /*
-    ictLayers urlDAI = "http://opmilld.no.de/v2/tt-digital_access_index",
-    urlCommunities = "http://opmilld.no.de/v2/tt-ict-underserved-communities",
-    urlBlocks = "http://opmilld.no.de/v2/tt-underserved-comm-blocks",
-    urlBaskets = "http://opmilld.no.de/v2/tt-underserved-comm-blocks";
-    */
-    
     blocks =
 [
   { 'block': 'block 1', 'noData': true },
@@ -196,36 +189,20 @@ function callMapM(source,ini) {
             $('.wax-tooltip').remove();
             interaction.remove();
             //map.removeLayerAt(0);
-            map = new mm.Map('map-div', ictLayer).
-            setCenterZoom(new mm.Location(10.641743690271975, -61.27819824218748), 10);
-            interaction = wxm.interaction(map, tilejson);
-            wxm.fullscreen(map, tilejson).appendTo(map.parent);
-            wxm.zoomer(map, tilejson).appendTo(map.parent);
-            wxm.legend(map, tilejson).appendTo(map.parent);
-            /*
-            locations = [
-              new mm.Location(-62.5466,9.9526),
-              new mm.Location(-59.8687,11.1542)
-            ];
-            map.setExtent(locations);
-            */
         }
-        else{ 
-            // Set up a map in a div with the id 'map-div'
-            map = new mm.Map('map-div', ictLayer).
-            setCenterZoom(new mm.Location(10.641743690271975, -61.27819824218748), 10);
-            interaction = wxm.interaction(map, tilejson);
-            wxm.fullscreen(map, tilejson).appendTo(map.parent);
-            wxm.zoomer(map, tilejson).appendTo(map.parent);
-            wxm.legend(map, tilejson).appendTo(map.parent);
-            /*
-            locations = [
-              new mm.Location(-62.5466,9.9526),
-              new mm.Location(-59.8687,11.1542)
-            ];
-            map.setExtent(locations);
-            */
-        }
+        map = new mm.Map('map-div', ictLayer).
+        setCenterZoom(new mm.Location(10.641743690271975, -61.27819824218748), 10);
+        interaction = wxm.interaction(map, tilejson);
+        wxm.fullscreen(map, tilejson).appendTo(map.parent);
+        wxm.zoomer(map, tilejson).appendTo(map.parent);
+        wxm.legend(map, tilejson).appendTo(map.parent);
+        /*
+        locations = [
+          new mm.Location(-62.5466,9.9526),
+          new mm.Location(-59.8687,11.1542)
+        ];
+        map.setExtent(locations);
+        */
     });
 }
 
