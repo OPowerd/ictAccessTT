@@ -21,6 +21,8 @@
 <link href="css/controls.css" rel="stylesheet">
 <link href="css/rickshaw.min.css" rel="stylesheet">
 <link href="css/population.css" rel="stylesheet">
+<!-- Leaflet 
+    <link rel="stylesheet" href="http://leaflet.cloudmade.com/dist/leaflet.css" /> add teh  iee shim also -->
 <link href="css/app.css" rel="stylesheet">
 <script src="prefixfree.min.js"></script>
 
@@ -83,18 +85,19 @@
 <div id="Omain" class="container">
 	<div class="row">
 		<div id="OPmap" >
-			<div id="map-div" class="six columns">
+			<div id="map-div" class="twelve columns">
 				<!-- <img src="http://placehold.it/1024x520&text=Map%20Goes%20Here" />  -->
 			</div>
 		</div>
 	</div>
     <div class="row">
 		<div id="OPbuttons" >
-			<div id="mapButtons-div" class="six row">
+			<div id="mapButtons-div" class="one row">
                 <ul>
-                    <li class='item'><a class="small radius blue button" href='#' id='dai-idx'>Digital Access Index</a></li>
-                    <li class='item'><a class="small radius blue button" href='#' id='dai-util'>Underserved Communities</a></li>
-                    <li class='item'><a class="small radius blue button" href='#' id='dai-util'>Underserved Blocks</a></li>
+                    <li class='item'><a class="small radius blue button" href='#' id='ict-dai'>Digital Access Index</a></li>
+                    <li class='item'><a class="small radius blue button" href='#' id='ict-ucomm'>Underserved Communities</a></li>
+                    <li class='item'><a class="small radius blue button" href='#' id='ict-ublks'>Underserved Blocks</a></li>
+                    <li class='item'><a class="small radius blue button" href='#' id='ict-ubskts'>Underserved Baskets</a></li>
                 </ul>
 			</div>
             <div id="blockButtons-div" class="six row">
@@ -149,9 +152,11 @@
 <script src="js/d3.csv.min.js"></script>
 <script src="js/rickshaw.min.js"></script>
 <!-- <script src="http://mapbox.com/wax/dist/modestmaps.js" type="text/javascript"></script> -->
-<script src="http://mapbox.com/microsite-example/layerswitcher/wax/ext/modestmaps.min.js" type="text/javascript"></script>
+<script src="http://mapbox.com/microsite-example/layerswitcher/wax/ext/modestmaps.min.js" type="text/javascript"></script> -->
 <!-- <script src="http://mapbox.com/wax/js/ender.js" type="text/javascript"></script> -->
 <script src="http://mapbox.com/microsite-example/layerswitcher/wax/dist/wax.mm.js" type="text/javascript"></script>
+<!-- 	<script src="http://leaflet.cloudmade.com/dist/leaflet.js"></script>
+    <script src='http://mapbox.com/wax/dist/wax.leaf.min.js' type='text/javascript'></script> -->
 <!-- <script src="js/mm.waxconnector.js" type="text/javascript"></script> -->
 <script src="js/app.js"></script>
 

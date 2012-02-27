@@ -2,9 +2,10 @@ var settings = {
 	'sessionSecret': 'sessionSecret',
 	'port': 10001,
 	'uri': 'http://190.213.84.249:10001' // Without trailing /
+    //'uri': 'http://ictaccesstt.herokuapp.com'
+    //'uri': 'http://opit-tt.no.de'
 	// You can add multiple recipiants for notifo notifications
-	,
-	'notifoAuth': null
+	,'notifoAuth': null
 /*[
 		{
 			'username': ''
@@ -34,8 +35,10 @@ var settings = {
 };
 
 if (process.env.NODE_ENV == 'production') {
-	settings.uri = 'http://190.213.84.249';
-	settings.port = process.env.PORT || 10001; // Joyent SmartMachine uses process.env.PORT
+    //settings.uri = 'http://ictaccesstt.herokuapp.com';
+    //settings.uri = 'http://opit-tt.no.de';
+    settings.uri = 'http://190.213.84.249';
+	settings.port = process.env.PORT || 80; // Joyent SmartMachine uses process.env.PORT
 	//settings.airbrakeApiKey = '0190e64f92da110c69673b244c862709'; // Error logging, Get free API key from https://airbrakeapp.com/account/new/Free
 }
 module.exports = settings;
