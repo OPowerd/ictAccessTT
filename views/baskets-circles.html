@@ -1,0 +1,228 @@
+﻿<!DOCTYPE html>
+   
+<!-- paulirish.com/2008/conditional-css-vs-css-hacks-answer-neither/ -->
+<!--[if lt IE 7]> <html class='no-js lt-ie9 lt-ie8 lt-ie7' lang='en'> <![endif]-->
+<!--[if IE 7]>    <html class='no-js lt-ie9 lt-ie8' lang='en'> <![endif]-->
+<!--[if IE 8]>    <html class='no-js lt-ie9' lang='en'> <![endif]-->
+<!--[if gt IE 8]><!--> <html lang='en'> <!--<![endif]--> 
+
+<head> 
+<meta charset="utf-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"> 
+<!-- Set the viewport width to device width for mobile -->
+<meta content="Open Data, Trinidad and Tobago" name="keywords">
+<meta content="width=device-width, initial-scale=1.0" name="viewport" />
+<title>IT Access in Trinidad and Tobago</title>
+<!-- Included CSS Files -->
+<meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+<link href="css/foundation.css" rel="stylesheet">
+<link href="css/jquery-ui-1.8.17.custom.css" rel="stylesheet">
+<link href="css/controls.css" rel="stylesheet">
+<link href="css/app.css" rel="stylesheet">
+<script src="prefixfree.min.js"></script>
+
+
+<script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+</head>
+
+<body style="background-color: #F8F8F8">
+<div class="container">
+<div class="row blockbuttons">
+
+    <div id="containment-wrapper" class = "twelve columns">
+    
+    <ul id="basket0" class='droptrue'>
+        <li id="basket-head0" class="ui-widget-header">First Basket</li>
+        <li class="ui-state-default" id="blk1">Block 1</li>
+    	<li class="ui-state-default" id="blk2">Block 2</li>
+    </ul>
+    
+    <ul id="basket1" class='droptrue'>
+    	<li id="basket-head1" class="ui-widget-header">Second Basket</li>
+        <li class="ui-state-default" id="blk3">Block 3</li>
+    	<li class="ui-state-default" id="blk4">Block 4</li>
+    </ul>
+    
+    <ul id="basket2" class='droptrue'>
+        <li id="basket-head3" class="ui-widget-header">Third Basket</li>
+        <li class="ui-state-default" id="blk5">Block 5</li>
+    	<li class="ui-state-highlight" id="blk6">Block 6</li>
+    </ul>
+    
+    <ul id="basket3" class="droptrue">
+        <li id="basket-head4" class="ui-widget-header">Forth Basket</li>
+        <li class="ui-state-highlight" id="blk7">Block 7</li>
+    	<li class="ui-state-highlight" id="blk8">Block 8</li>
+    </ul>
+    
+    <ul id="basket4" class="droptrue">
+        <li id="basket-head4" class="ui-widget-header">Fifth Basket</li>
+        <li class="ui-state-highlight" id="blk9">Block 9</li>
+        <li class="ui-state-highlight" id="blk10">Block 10</li>
+    </ul>
+    
+    <ul id="basket5"  class="droptrue">
+        <li id="basket-head5" class="ui-widget-header">Sixth Basket</li>
+        <li class="ui-state-highlight" id="blk11">Block 11</li>
+    	<li class="ui-state-highlight" id="blk12">Block 12</li>
+    </ul>
+</div>
+</div>
+
+<br clear="all" />
+<div class="row">
+
+<div id="block-div" style="width:800px; height:400px">
+
+</div>
+
+</div>
+</div>
+<!-- Included JS Files -->
+<!-- <script src='http://code.jquery.com/jquery-1.7.1.min.js' type='text/javascript'></script> -->
+<script src="https://www.google.com/jsapi" type="text/javascript"></script>
+<script src="js/jquery-1.7.1.min.js"></script>
+<script src="js/jquery-ui-1.8.17.custom.min.js"></script>
+<script src="js/underscore-min.js"></script>
+<script src="js/data.js"></script>
+<script src="js/modernizr.foundation.js"></script>
+<script src="js/foundation.js"></script>
+<script src="js/jquery.dataTables.min.js"></script>
+<!-- <script src="js/g.raphael-min.js"></script> -->
+<script src="js/d3.min.js"></script>
+<script src="js/d3.csv.min.js"></script>
+<script src="js/rickshaw.min.js"></script>
+ 
+<script src="http://mapbox.com/wax/dist/modestmaps.js" type="text/javascript"></script> 
+<script src="http://mapbox.com/microsite-example/layerswitcher/wax/ext/modestmaps.min.js" type="text/javascript"></script>
+<!-- <script src="http://mapbox.com/wax/js/ender.js" type="text/javascript"></script> -->
+<script src="http://mapbox.com/microsite-example/layerswitcher/wax/dist/wax.mm.js" type="text/javascript"></script>
+<!-- <script src="js/mm.waxconnector.js" type="text/javascript"></script> -->
+<script src="js/app.js"></script>
+
+<script src='http://mapbox.com/wax/dist/leaflet.js' type='text/javascript'></script
+<!--[if lte IE 8]><link rel="stylesheet" href="/css/leaflet.ie.css" /><![endif]-->
+<script src='http://mapbox.com/wax/dist/wax.leaf.min.js' type='text/javascript'></script>
+<link href="http://mapbox.com/wax/css/leaflet.css" rel="stylesheet">  
+
+
+<script type="text/javascript">
+    // Alias com.modestmaps to mm. This isn't necessary -
+    // just nice for shorter code.
+    var mm = com.modestmaps;
+    var wxm = wax.mm;
+    var layers = Array();
+    var urlBlocks =
+[
+  { 'block': 'block 1', 'noData': true },
+  { 'block': 'block 2', 'lat': '10.136', 'lng': '-61.641' },
+  { 'block': 'block 3', 'lat': '10.195', 'lng': '-61.322' },
+  { 'block': 'block 4', 'lat': '10.143', 'lng': '-61.137' },
+  { 'block': 'block 5', 'lat': '10.301', 'lng': '-61.082' },
+  { 'block': 'block 6', 'lat': '10.439', 'lng': '-61.376' },
+  { 'block': 'block 7', 'lat': '10.485', 'lng': '-61.285' },
+  { 'block': 'block 8', 'noData': true },
+  { 'block': 'block 9', 'lat': '10.704', 'lng': '-61.316' },
+  { 'block': 'block 10', 'lat': '10.631', 'lng': '-61.086' },
+  { 'block': 'block 11', 'lat': '10.723', 'lng': '-61.087' },
+  { 'block': 'block 12', 'lat': '10.372', 'lng': '-61.209' }
+    ];
+
+
+    var map;
+
+    var map = new L.Map('block-div');
+
+    var llCenter = new L.LatLng(10.4, -61.3);
+
+    // create a CloudMade tile layer (or use other provider of your choice)
+    var urlBlockBaseSrc = 'http://opmilld.no.de/v2/tt-underserved-comm-blocks';
+    var lyrBlockBase = new L.TileLayer(urlBlockBaseSrc + '/{z}/{x}/{y}.png', { maxZoom: 18 });
+    map.addLayer(lyrBlockBase).setView(llCenter, 9);
+
+    map.on('click', onMapClick);
+
+    function onMapClick(e) {
+        console.debug(e.latlng);
+    }
+
+    $(document).ready(function () {
+
+        $('.blockbuttons ul').each(function () {
+            $(this).hover
+            (
+                function () {
+                    var groupOn = new L.LayerGroup();
+                    var latlng;
+                    for (var m = 0; m < this.children.length; m++) {
+                        if (this.children[m].id.indexOf("blk") > -1) {
+                            var idx = this.children[m].id.replace("blk", "");
+                            console.debug(idx);
+                            if (urlBlocks[idx - 1].noData) continue;
+                            latlng = new L.LatLng(urlBlocks[idx - 1].lat, urlBlocks[idx - 1].lng);
+                            latlng.lng = urlBlocks[idx - 1].lng;
+                            var circleOptions = {
+                                color: 'White',
+                                fillColor: '#f03',
+                                fillOpacity: 0.5
+                            };
+
+                            var lyrBlo = new L.Circle(latlng, 5000, circleOptions);
+
+                            groupOn.addLayer(lyrBlo);
+                        }
+                    }
+                    layers.push(groupOn);
+                    map.addLayer(groupOn).setView(latlng, 9);
+                },
+                function () {
+                    for (var k = 0; k < layers.length; k++) {
+                        map.removeLayer(layers[k]);
+                    }
+                }
+            );
+        });
+
+
+        $('.blockbuttons li').each(function () {
+            //Get all tabs
+            if (this.id.indexOf('blk') > -1) {
+            
+                this.onclick = function () {
+
+                    var idx = this.id.replace("blk", "");
+                    if (urlBlocks[idx - 1].noData) return;
+
+                    for (var k = 0; k < layers.length; k++) {
+                        map.removeLayer(layers[k]);
+                    }
+                    //var parts = urlBlocks[idx - 1].location.split(",");
+                    //console.debug(parts);
+                    var latlng = new L.LatLng(urlBlocks[idx - 1].lat, urlBlocks[idx - 1].lng);
+                    console.debug(urlBlocks[idx - 1].lng);
+                    //console.debug(latlng.lng);
+                    latlng.lng = urlBlocks[idx - 1].lng;
+                    console.debug(latlng.lng);
+                    var circleOptions = {
+                        color: '#EFEFEF',
+                        fillColor: '#f03',
+                        fillOpacity: 0.5
+                    };
+
+                    var lyrBlo = new L.Circle(latlng, 5000, circleOptions);
+                    layers.push(lyrBlo);
+                    map.addLayer(lyrBlo).setView(latlng, 9);
+
+                };
+
+            }
+
+        });
+
+
+    });
+
+</script>
+</body>
+
+</html>
