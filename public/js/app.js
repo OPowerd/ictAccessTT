@@ -3,7 +3,7 @@ var ictLayer, map, interaction;
 var ictLayers = ["http://opmilld.no.de/v2/tt-digital_access_index",
     "http://opmilld.no.de/v2/tt-ict-underserved-communities",
     "http://opmilld.no.de/v2/tt-underserved-comm-blocks",
-    "http://opmilld.no.de/v2/tt-underserved-comm-blocks"];
+    "http://opmilld.no.de/v2/tt-underserved-comm-blocks-2"];
     
     blocks =
 [
