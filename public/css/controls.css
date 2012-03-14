@@ -113,7 +113,7 @@ a.wax-fullscreen {
   border:1px solid #ccc;
   background:transparent url(images/mask.png) repeat;
   overflow:auto;
-  line-height: 8px;
+  line-height: 12px;
   border-radius:3px;
   -moz-border-radius:3px;
   -webkit-border-radius:3px;
